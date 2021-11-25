@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <title>Events</title>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+  </head>
+  <body>
+    <nav class="navbar-dark bg-dark fixed-top">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link " href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="photos.html">Photos</a>
+        <li class="nav-item">
+          <a class="nav-link active" href="events.html" tabindex="-1" aria-disabled="true">Events</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="groom.html" tabindex="-1" aria-disabled="true">Groomsman & Bridesmaid</a>
+          </li>
+        <li class="nav-item" style="background-color: rgb(136, 134, 134);">
+          <a class="nav-link" href="reg.html" tabindex="-1" aria-disabled="true">Gift Registry</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="simple log/index.html">Portal</a>
+        </li>
+      </ul>
+    </nav>
+<br><br>
+    <h1 class="title">Events leading to a <br> successful ceremony</h1><hr>
+    <br> 
+    <div class="process-wrapper">
+    <div id="progress-bar-container">
+      <ul>
+        <li class="step step01 active"><div class="step-inner">Traditional Wedding</div></li>
+        <li class="step step02"><div class="step-inner">Court</div></li>
+        <li class="step step03"><div class="step-inner">Church Ceremony</div></li>
+        <li class="step step04"><div class="step-inner">Photo session</div></li>
+        <li class="step step05"><div class="step-inner">Reception</div></li>
+      </ul>
+      
+      <div id="line">
+        <div id="line-progress"></div>
+      </div>
+    </div>
+    
+    <div id="progress-content-section">
+
+      <div class="section-content discovery active">
+        <h2>Traditional Wedding <br>15th April 2021 (18h00)</h2>
+        <p>Lambamento/Traditional Wedding
+         <br> - Union of both Families
+         <br> - Princess Tsasa Da Cruz becomes a Quisseque </p>
+      </div>
+
+      <div class="section-content strategy">
+        <h2>Magistrate court wedding <br>16th April 2021</h2>
+        <p>Magistrate court wedding
+         <br> - Morning hours ( Time to be announced)
+         <br> - Family & Relatives
+         <br> -Groomsmen & Bridesmaids </p>
+
+      </div>
+      
+      <div class="section-content creative">
+        <h2> Reception<br>17th April 2021</h2>
+      <p>11h00 Church Ceremony ( The Church of Jesus Christ of Latter-Day Saint ) 
+        <br> Location: Schoeman Street, Windhoek, Namibia
+      </p> 
+     </div>
+      
+      <div class="section-content production">
+        <h2> Reception<br>17th April 2021</h2>
+        <p>Picture session ( Private Session for Family and Relatives)</p> 
+      </div>
+      
+      <div class="section-content analysis">
+        <h2> Reception<br>17th April 2021</h2>
+        <p>17h00 Wedding Party 
+         <br> - Khomasdal Cultural hall
+         <br> Location: Corner Edsel Street, Windhoek, Namibia
+        <br>  NB: Guest May arrive an hour early for picture sessions (optional)</p>
+      </div>
+      </div>
+    </div><br>
+    <h1 class="title" style="font-size: 3rem;">Masutu Vihanga the MC</h1>
+      <div class="containerss">
+        <img src="images/masu.jpeg" alt="Avatar" class="imagess">
+        <div class="overlayss">
+          <div class="textss">Life of the party. <br> He's the MC for the evening. <br> Married man. Awesome friend</div>
+        </div>
+      </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+     <script>
+        
+        $(".step").click( function() {
+      $(this).addClass("active").prevAll().addClass("active");
+      $(this).nextAll().removeClass("active");
+    });
+    
+    $(".step01").click( function() {
+      $("#line-progress").css("width", "3%");
+      $(".discovery").addClass("active").siblings().removeClass("active");
+    });
+    
+    $(".step02").click( function() {
+      $("#line-progress").css("width", "25%");
+      $(".strategy").addClass("active").siblings().removeClass("active");
+    });
+    
+    $(".step03").click( function() {
+      $("#line-progress").css("width", "50%");
+      $(".creative").addClass("active").siblings().removeClass("active");
+    });
+    
+    $(".step04").click( function() {
+      $("#line-progress").css("width", "75%");
+      $(".production").addClass("active").siblings().removeClass("active");
+    });
+    
+    $(".step05").click( function() {
+      $("#line-progress").css("width", "100%");
+      $(".analysis").addClass("active").siblings().removeClass("active");
+    });
+        </script>
+
+
+    <!--RSVP section-->
+    <a href="http://aminataflaviano.rsvpify.com" class="nav-link">
+      <button type="button" class="btn btn-dark rsvpbtn" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">RSVP</button>
+    </a>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+  <div class="last">
+    <footer>
+  
+        <a href="maurodesousa94@gmail.com">Copyright©Enov</a>
+  
+    </footer>
+  </div>
+</html>

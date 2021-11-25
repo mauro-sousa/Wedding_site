@@ -1,0 +1,152 @@
+<html>
+<head>
+  <title>Portal</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</head>
+<nav class="navbar-dark bg-dark fixed-top">
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link " href="../index.html">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="../photos.html">Photos</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="../events.html" tabindex="-1" aria-disabled="true">Events</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="../groom.html" tabindex="-1" aria-disabled="true">Groomsman & Bridesmaid</a>
+      </li>
+    <li class="nav-item" style="background-color: rgb(136, 134, 134);">
+      <a class="nav-link" href="../reg.html" tabindex="-1" aria-disabled="true">Gift Registry</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="simple log/index.html">Portal</a>
+    </li>
+  </ul>
+</nav>
+<body>
+
+  <div id="login_div" class="main-div">
+    <h3>Brides and Groom Login</h3>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
+
+    <button onclick="login()">Login to Account</button>
+  </div>
+
+  <div id="user_div" class="loggedin-div">
+<br><br><br>
+    <h1 class="title">Stuff We Need To Do</h1>
+
+    <div class="all-tasks">
+      <h2 class="task-list-title">The list for success</h2>
+      <ul class="task-list" data-lists></ul>
+
+      <form action="" data-new-list-form>
+        <input 
+          type="text"
+          class="new list"
+          data-new-list-input
+          placeholder="new list name"
+          aria-label="new list name"
+        />
+        <button class="btn create" aria-label="create new list">+</button>
+      </form>
+    </div>
+
+    <div class="todo-list" data-list-display-container>
+      <div class="todo-header">
+        <h2 class="list-title" data-list-title>Test</h2>
+        <p class="task-count" data-list-count>3 tasks remaining</p>
+      </div>
+
+      <div class="todo-body">
+        <div class="tasks" data-tasks></div>
+
+        <div class="new-task-creator">
+            <form action="" data-new-task-form>
+                <input 
+                  type="text"
+                  data-new-task-input
+                  class="new task"
+                  placeholder="new task name"
+                  aria-label="new task name"
+                />
+                <button class="btn create" aria-label="create new task">+</button>
+              </form>
+        </div>
+        <div class="delete-stuff"><br>
+          <button class="btn delete" data-clear-complete-tasks-button>Clear completed tasks</button>
+          <button class="btn delete" data-delete-list-button>Delete list</button>
+        </div>
+      </div>
+    </div>
+    <template id="task-template">
+      <div class="task">
+        <input type="checkbox" />
+        <label>
+          <span class="custom-checkbox"></span>
+        </label>
+      </div>
+    </template>
+<br><br>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAg8RgJa0wWlh2ffbnDqL2zXbSD6J3yApI",
+    authDomain: "wedding-15244.firebaseapp.com",
+    databaseURL: "https://wedding-15244.firebaseio.com",
+    projectId: "wedding-15244",
+    storageBucket: "wedding-15244.appspot.com",
+    messagingSenderId: "1007308847368",
+    appId: "1:1007308847368:web:159f7a4c198764117094bd"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="index.js"></script>
+  <script src="script.js"></script>
+</body>
+<style>
+  .last{
+  width: 100%;
+  padding-top: 30%;
+}
+
+.last footer{
+  background-color: black;
+  color: white;
+  width: 99vw;
+  position: absolute;
+}
+.last a{
+  color: white;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+.last a:hover{
+  color: wheat;
+  text-decoration: none;
+}
+</style>
+<div class="last">
+  <footer>
+
+      <a href="#">Copyright©Enov</a>
+
+  </footer>
+</div>
+</html>
